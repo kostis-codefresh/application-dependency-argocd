@@ -15,6 +15,14 @@ spec:
     spec:
       containers:
       - name: webserver-simple
-        image: docker.io/kostiscodefresh/my-app-image:latest
+        image: docker.io/kostiscodefresh/simple-env-app:1.0
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 8080   

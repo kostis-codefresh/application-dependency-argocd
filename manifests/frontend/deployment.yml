@@ -18,3 +18,11 @@ spec:
         image: docker.io/kostiscodefresh/interest:latest
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 8080   
