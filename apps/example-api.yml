@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/kostis-codefresh/application-dependency-argocd.git
     targetRevision: HEAD
-    path: ./manifests
+    path: ./manifests/api
    
   destination:
     server: https://kubernetes.default.svc
